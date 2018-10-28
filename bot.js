@@ -4,6 +4,21 @@ const prefix = '5'
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
+
+
+client.on('message', message => {
+    if(message.content === '^^DailyForAll'){
+        message.channel.send('#daily')
+    }
+});
+
+client.on('message', message => {
+    if(message.content === '^^AllCredit'){
+        message.channel.send('#credits')
+    }
+});
+
+
 client.on('warn', console.warn);
 
 client.on('error', console.error);
@@ -26,6 +41,5 @@ function timerFunc() {
 
 var timer = setTimeout(timerFunc, 1000);
 
-
-client.login('NDk1NjgxODYwMTY5NjI5NzAx.DpFpUQ.HNRN_-g8GsOgwWRdaxGKF56KwBE');
+client.login(process.env.BOT_TOKEN);
 
