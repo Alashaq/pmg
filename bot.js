@@ -18,6 +18,11 @@ client.on('message', message => {
     }
 });
 
+client.on('message', message => {
+    if(message.content === '^^RepForAlashaq'){
+        message.channel.send('#rep <@346045919072092161>')
+    }
+});
 
 client.on('warn', console.warn);
 
